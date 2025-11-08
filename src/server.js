@@ -58,9 +58,6 @@ const corsOptions = {
 // ✅ APLICAR CORS GLOBALMENTE
 app.use(cors(corsOptions));
 
-// ✅ MANEJAR PREFLIGHT REQUESTS EXPLÍCITAMENTE
-app.options('*', cors(corsOptions));
-
 // ✅ MIDDLEWARE MANUAL CORS (backup por si el paquete falla en Vercel)
 app.use((req, res, next) => {
     const origin = req.headers.origin;
